@@ -1,0 +1,43 @@
+/* You can add global styles to this file, and also import other style files */
+@import url("https://fonts.googleapis.com/css?family=Montserrat:300,400,600&display=swap");
+
+body {
+    height: 100%;
+    background-color: #dcdcdc;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 600;
+}
+
+hr {
+    color: black;
+    height: 5px;
+}
+
+.btn-success {
+    border-color: #232323;
+    background-color: #676767;
+}
+
+.btn-success:focus {
+    border-color: #676767;
+    background-color: #232323;
+}
+
+.btn-success:not(:disabled):not(.disabled):active {
+    border-color: #232323; 
+    background-color: #676767;
+}
+
+.btn-success:hover {
+    border-color: #676767;
+    background-color: #232323;
+}
+
+table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+  }
+
+th {
+    background-color: rgb(113, 133, 170);
+}

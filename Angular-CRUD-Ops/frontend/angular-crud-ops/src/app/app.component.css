@@ -1,0 +1,44 @@
+.top {
+  padding-block-end: 2%;
+}
+
+ul {
+  list-style-type: none;
+  overflow: hidden;
+  background-color: #232323;
+  font-size: 2em;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+li {
+  float: left;
+  margin: auto;
+  padding: 0 20px;
+}
+
+@media screen and (max-width: 600px) {
+  li {
+    float: none;
+    display: block;
+  }
+}
+
+li a {
+  display: block;
+  color: #efefef;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+li a:hover {
+  background-color: #444;
+}
+
+.active {
+  background-color: #444;
+}

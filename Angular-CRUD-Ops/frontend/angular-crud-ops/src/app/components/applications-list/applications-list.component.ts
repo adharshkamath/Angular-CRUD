@@ -12,27 +12,27 @@ export class ApplicationsListComponent implements OnInit {
   Application: any = [];
 
   constructor(private apiService: ApiService) {
-    this.readApplication();
+    this.readReview();
   }
 
   ngOnInit(): void {
   }
 
-  readApplication() {
-    this.apiService.getApplications().subscribe((data) => {
+  readReview() {
+    this.apiService.getReviews().subscribe((data) => {
       this.Application = data;
     });
   }
 
-  approveApplication(id, index, value) {
-    this.apiService.approveApplication(id, { raise: value }).subscribe((data) => {
+  editReview(id, index, value) {
+    this.apiService.updateReview(id, { raise: value }).subscribe((data) => {
       this.Application.splice(index, 1);
     });
   }
 
 
-  rejectApplication(id, index) {
-    this.apiService.rejectApplication(id).subscribe((data) => {
+  deleteReview(id, index) {
+    this.apiService.deleteReview(id).subscribe((data) => {
       this.Application.splice(index, 1);
     });
   }

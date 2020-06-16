@@ -12,6 +12,7 @@ import { EmployeeListComponent } from './components/employee-list/employee-list.
 import { ApplicationsListComponent } from './components/applications-list/applications-list.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ApplicationsCreateComponent } from './components/applications-create/applications-create.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     EmployeeCreateComponent,
     EmployeeEditComponent,
     EmployeeListComponent,
-    ApplicationsListComponent
+    ApplicationsListComponent,
+    ApplicationsCreateComponent
   ],
   imports: [
     BrowserModule,

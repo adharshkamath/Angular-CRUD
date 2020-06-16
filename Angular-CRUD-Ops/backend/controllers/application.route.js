@@ -14,20 +14,20 @@ applicationController.route("/applications").get((req, res) => {
 	});
 });
 
-applicationController.route("/approve/:id").put((req, res) => {
-  console.log(req.body.raise);
+
+applicationController.route("/review/:id").put((req, res) => {
+  console.log(req.body.reviewText);
   Employee.findByIdAndUpdate(req.params.id, {
-    $inc: { salary: req.body.raise },
-    $set: { appliedForAppraisal: false, requestedAppraisal: 0}
+    $set: { review: req.body.reviewText }
   }, function (err, post) {
     if (err) console.log(err);
     res.json(post);} 
   )
 });
 
-applicationController.route("/reject/:id").put((req, res) => {
+applicationController.route("/reviewd/:id").delete((req, res) => {
   Employee.findByIdAndUpdate(req.params.id, {
-    $set: { appliedForAppraisal: false, requestedAppraisal: 0}
+    $set: { review: null }
   }, function (err, post) {
     if (err) return next(err);
     res.json(post);} 

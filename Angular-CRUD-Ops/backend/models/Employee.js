@@ -21,11 +21,8 @@ let Employee = new Schema({
    salary: {
       type: Number
    },
-   appliedForAppraisal: {
-      type: Boolean
-   },
-   requestedAppraisal: {
-      type: Number
+   review: {
+      type: String
    },
 }, {
    collection: 'employees'

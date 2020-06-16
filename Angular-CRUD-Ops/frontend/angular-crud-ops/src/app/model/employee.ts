@@ -5,6 +5,5 @@ export class Employee {
     department: string;
     saary: number;
     phoneNumber: number;
-    appliedForAppraisal: boolean;
-    requestedApproval: number;
+    review: string;
 }

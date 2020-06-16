@@ -17,8 +17,7 @@ export class ApiService {
 
   createEmployee(data): Observable<any> {
     const url = `${this.baseUri}/create`;
-    data.appliedForAppraisal = false;
-    data.requestedAppraisal = 0;
+    data.review = '';
     return this.http.post(url, data)
       .pipe(
         catchError(this.errorMgmt)
@@ -58,22 +57,28 @@ export class ApiService {
   }
 
 
-  getApplications(): Observable<any> {
+  getReviews(): Observable<any> {
     const url = `${this.baseUri}/applications`;
     return this.http.get(url, { headers: this.headers }).pipe(
       catchError(this.errorMgmt)
     );
   }
 
-
-  approveApplication(id, raise): Observable<any> {
-    const url = `${this.baseUri}/approve/${id}`;
-    return this.http.put(url, raise, { headers: this.headers}).pipe(
+  addReview(id, review): Observable<any> {
+    const url = `${this.baseUri}/add/${id}`;
+    return this.http.put(url, review, { headers: this.headers }).pipe(
       catchError(this.errorMgmt)
     );
   }
 
-  rejectApplication(id): Observable<any> {
+  updateReview(id, review): Observable<any> {
+    const url = `${this.baseUri}/add/${id}`;
+    return this.http.put(url, review, { headers: this.headers }).pipe(
+      catchError(this.errorMgmt)
+    );
+  }
+
+  deleteReview(id): Observable<any> {
     const url = `${this.baseUri}/reject/${id}`;
     return this.http.put(url, { headers: this.headers }).pipe(
       catchError(this.errorMgmt)

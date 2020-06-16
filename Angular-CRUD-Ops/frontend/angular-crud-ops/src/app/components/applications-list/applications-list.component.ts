@@ -25,20 +25,16 @@ export class ApplicationsListComponent implements OnInit {
   }
 
   approveApplication(id, index, value) {
-    if (window.confirm('Are you sure?')) {
-      this.apiService.approveApplication(id, { raise: value }).subscribe((data) => {
-        this.Application.splice(index, 1);
-      });
-    }
+    this.apiService.approveApplication(id, { raise: value }).subscribe((data) => {
+      this.Application.splice(index, 1);
+    });
   }
 
 
   rejectApplication(id, index) {
-    if (window.confirm('Are you sure?')) {
-      this.apiService.rejectApplication(id).subscribe((data) => {
-        this.Application.splice(index, 1);
-      });
-    }
+    this.apiService.rejectApplication(id).subscribe((data) => {
+      this.Application.splice(index, 1);
+    });
   }
 
 }

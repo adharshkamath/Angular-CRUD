@@ -3,56 +3,56 @@
 
 body {
     height: 100%;
-    background-color: #dcdcdc;
+    background-color: #EBEBFF;
     font-family: "Montserrat", sans-serif;
     font-weight: 600;
 }
 
 hr {
     color: black;
-    height: 5px;
+    size: 5px;
 }
 
 .btn-success {
-    border-color: #232323;
-    background-color: #676767;
+    border-color: #393D3F;
+    background-color: #393D3F;
 }
 
 .btn-success:focus {
     border-color: #676767;
-    background-color: #232323;
+    background-color: #393D3F;
 }
 
 .btn-success:not(:disabled):not(.disabled):active {
-    border-color: #232323; 
-    background-color: #676767;
+    border-color: #676767; 
+    background-color: #393D3F;
 }
 
 .btn-success:hover {
     border-color: #676767;
-    background-color: #232323;
+    background-color: #393D3F;
 }
 
 table, th, td {
-    border: 1px solid #232323;
+    border: 1px solid #393D3F;
     border-collapse: collapse;
 }
 
 .table thead th {
-    border: 1px solid #232323;
+    border: 1px solid #393D3F;
     vertical-align: middle;
     align-content: center;
 }
 
 .table-success th {
-    border-color: #232323;
+    border-color: #393D3F;
 }
 
 .table-bordered, td {
-    border: 1px solid #232323 !important;    
+    border: 1px solid #393D3F !important;    
     border-collapse: collapse;
 }
 
 th {
-    background-color: rgb(113, 133, 170);
+    background-color: #9E95DB;
 }

@@ -34,9 +34,24 @@ hr {
 }
 
 table, th, td {
-    border: 1px solid black;
+    border: 1px solid #232323;
     border-collapse: collapse;
-  }
+}
+
+.table thead th {
+    border: 1px solid #232323;
+    vertical-align: middle;
+    align-content: center;
+}
+
+.table-success th {
+    border-color: #232323;
+}
+
+.table-bordered, td {
+    border: 1px solid #232323 !important;    
+    border-collapse: collapse;
+}
 
 th {
     background-color: rgb(113, 133, 170);

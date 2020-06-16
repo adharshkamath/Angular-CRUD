@@ -25,10 +25,10 @@
         <td>&#8377; {{employee.requestedAppraisal}}</td>
         <td class="text-center edit-block">
           <span class="edit" (click)="approveApplication(employee._id, i, employee.requestedAppraisal)">
-            <button type="button" class="btn btn-success btn-sm">Approve</button>
+            <button type="button" class="btn btn-success btn-sm" style="margin: 5px">Approve</button>
           </span>
           <span class="delete" (click)="rejectApplication(employee._id, i)">
-            <button type="button" class="btn btn-danger btn-sm">Reject</button>
+            <button type="button" class="btn btn-danger btn-sm" style="margin: 5px">Reject</button>
           </span>
         </td>
       </tr>

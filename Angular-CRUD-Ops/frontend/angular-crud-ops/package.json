@@ -48,5 +48,16 @@
     "ts-node": "~8.3.0",
     "tslint": "~6.1.0",
     "typescript": "~3.8.3"
+  },
+  "description": "A responsive frontend written in Angular, for the Employee appraisal mangement application",
+  "author": "Adharsh Kamath",
+  "license": "MIT",
+  "homepage": "https://github.com/adharshkamath/Angular-CRUD.git#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/adharshkamath/Angular-CRUD.git"
+  },
+  "bugs": {
+    "url": "https://github.com/adharshkamath/Angular-CRUD.git/issues"
   }
 }

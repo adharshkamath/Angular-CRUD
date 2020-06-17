@@ -3,7 +3,7 @@ const applicationController = express.Router();
 
 let Employee = require("../models/Employee");
 
-applicationController.route("/applications").get((req, res) => {
+applicationController.route("/reviews").get((req, res) => {
 	Employee.find({ review: { $exists: true, $ne: null } }, (error, data) => {
 		if (error) {
 			return next(error);

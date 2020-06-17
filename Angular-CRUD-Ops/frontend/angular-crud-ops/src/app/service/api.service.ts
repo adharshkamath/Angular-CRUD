@@ -58,7 +58,7 @@ export class ApiService {
 
 
   getReviews(): Observable<any> {
-    const url = `${this.baseUri}/applications`;
+    const url = `${this.baseUri}/reviews`;
     return this.http.get(url, { headers: this.headers }).pipe(
       catchError(this.errorMgmt)
     );

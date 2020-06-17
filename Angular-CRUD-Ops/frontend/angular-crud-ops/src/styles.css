@@ -1,11 +1,28 @@
 /* You can add global styles to this file, and also import other style files */
 @import url("https://fonts.googleapis.com/css?family=Montserrat:300,400,600&display=swap");
 
+
 body {
     height: 100%;
     background-color: #EBEBFF;
-    font-family: "Montserrat", sans-serif;
+    font-family: "Montserrat", sans-serif !important;
     font-weight: 600;
+}
+
+.mat-toolbar {
+    font-weight: 650;
+}
+
+.mat-list-item, .mat-toolbar {
+    font-family: "Montserrat", sans-serif !important;
+}
+
+.mat-sidenav-content {
+    height: 100%;
+}
+
+.mat-drawer-container {
+    background-color: #fff;
 }
 
 hr {
@@ -55,4 +72,8 @@ table, th, td {
 
 th {
     background-color: #9E95DB;
+}
+
+.justify-content-center {
+    overflow: hidden;
 }

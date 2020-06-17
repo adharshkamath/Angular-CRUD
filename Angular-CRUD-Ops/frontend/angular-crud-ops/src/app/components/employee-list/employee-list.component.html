@@ -3,7 +3,8 @@
   <hr>
   <h4 *ngIf="Employee.length <= 0" class="no-data text-center">There is no employee added yet!</h4>
 
-  <table class="table table-bordered" *ngIf="Employee.length > 0">
+<div class="table-responsive">
+  <table class="table table-bordered table-striped w-auto" *ngIf="Employee.length > 0">
     <thead class="table-success">
       <tr>
         <th scope="col">Name</th>
@@ -42,4 +43,5 @@
       </tr>
     </tbody>
   </table>
+  </div>
 </div>

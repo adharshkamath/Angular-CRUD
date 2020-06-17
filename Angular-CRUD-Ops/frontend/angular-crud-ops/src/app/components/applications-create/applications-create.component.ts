@@ -11,6 +11,7 @@ import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 export class ApplicationsCreateComponent implements OnInit {
   submitted = false;
   isReadOnly = true;
+  newReview = true;
   appraisalForm: FormGroup;
 
   constructor(
@@ -44,6 +45,9 @@ export class ApplicationsCreateComponent implements OnInit {
         designation: data.designation,
         review: data.review
       });
+      if (data.review != null) {
+        this.newReview = false;
+      }
     });
   }
 

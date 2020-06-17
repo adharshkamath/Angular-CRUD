@@ -32,7 +32,8 @@
            </div>
 
            <div class="form-group">
-             <button class="btn btn-success btn-lg btn-block" type="submit">Update</button>
+             <button class="btn btn-success btn-lg btn-block" type="submit" *ngIf="!newReview">Update</button>
+             <button class="btn btn-success btn-lg btn-block" type="submit" *ngIf="newReview">Add</button>
            </div>
          </form>
        </div>

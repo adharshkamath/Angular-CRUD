@@ -79,5 +79,5 @@ th {
 }
 
 .justify-content-center {
-    overflow: hidden;
+    overflow-x: hidden;
 }

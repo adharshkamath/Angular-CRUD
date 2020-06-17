@@ -49,6 +49,6 @@ app.use((req, res, next) => {
 app.use(function (err, req, res, next) {
 	console.log("------");
 	console.error(err.message);
-	if (!err.statusCode) err.statusCode = 500; // If no specified error code, default to 'Internal Server Error (500)'
+	if (!err.statusCode) err.statusCode = 500;		// If no specified error code, default to 'Internal Server Error (500)'
 	res.status(err.statusCode).send(err.message);
 });

@@ -5,8 +5,7 @@ import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-applications-create',
-  templateUrl: './applications-create.component.html',
-  styleUrls: ['./applications-create.component.css']
+  templateUrl: './applications-create.component.html'
 })
 export class ApplicationsCreateComponent implements OnInit {
   submitted = false;

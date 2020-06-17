@@ -4,8 +4,7 @@ import { NgbModal, ModalDismissReasons } from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
   selector: 'app-applications-list',
-  templateUrl: './applications-list.component.html',
-  styleUrls: ['./applications-list.component.css']
+  templateUrl: './applications-list.component.html'
 })
 
 export class ApplicationsListComponent implements OnInit {

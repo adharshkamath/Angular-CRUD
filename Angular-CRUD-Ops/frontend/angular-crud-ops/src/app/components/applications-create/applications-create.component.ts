@@ -10,6 +10,7 @@ import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 })
 export class ApplicationsCreateComponent implements OnInit {
   submitted = false;
+  isReadOnly = true;
   appraisalForm: FormGroup;
 
   constructor(
@@ -23,17 +24,14 @@ export class ApplicationsCreateComponent implements OnInit {
   ngOnInit(): void {
     this.updateApplication();
     const id = this.actRoute.snapshot.paramMap.get('id');
-    this.appraisalForm = this.fb.group({
-      name: ['', [Validators.required]],
-      salary: ['', [Validators.required]],
-      review: ['', [Validators.required]]
-    });
+    this.getDetails(id);
   }
 
   updateApplication() {
     this.appraisalForm = this.fb.group({
       name: ['', [Validators.required]],
-      salary: ['', [Validators.required]],
+      department: ['', [Validators.required]],
+      designation: ['', [Validators.required]],
       review: ['', [Validators.required]]
     });
   }
@@ -42,18 +40,13 @@ export class ApplicationsCreateComponent implements OnInit {
     this.apiService.getEmployee(id).subscribe(data => {
       this.appraisalForm.setValue({
         name: data.name,
-        salary: data.salary,
+        department: data.department,
+        designation: data.designation,
         review: data.review
       });
     });
   }
 
-
-  updateName(e) {
-    this.appraisalForm.get('name').setValue(e, {
-      onlySelf : true
-    });
-  }
 
   get myForm() {
     return this.appraisalForm.controls;
@@ -66,9 +59,9 @@ export class ApplicationsCreateComponent implements OnInit {
     }
     else {
       const id = this.actRoute.snapshot.paramMap.get('id');
-      this.apiService.addReview(id, this.appraisalForm.value.review).subscribe(
+      this.apiService.addReview(id, { review: this.appraisalForm.value.review } ).subscribe(
         (res) => {
-          console.log('Application successfully created!');
+          console.log('Review successfully added!');
           this.ngZone.run(() => this.router.navigateByUrl('/applications-list'));
         }, (error) => {
           console.log(error);

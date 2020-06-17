@@ -65,22 +65,22 @@ export class ApiService {
   }
 
   addReview(id, review): Observable<any> {
-    const url = `${this.baseUri}/add/${id}`;
+    const url = `${this.baseUri}/review/${id}`;
     return this.http.put(url, review, { headers: this.headers }).pipe(
       catchError(this.errorMgmt)
     );
   }
 
   updateReview(id, review): Observable<any> {
-    const url = `${this.baseUri}/add/${id}`;
+    const url = `${this.baseUri}/review/${id}`;
     return this.http.put(url, review, { headers: this.headers }).pipe(
       catchError(this.errorMgmt)
     );
   }
 
   deleteReview(id): Observable<any> {
-    const url = `${this.baseUri}/reject/${id}`;
-    return this.http.put(url, { headers: this.headers }).pipe(
+    const url = `${this.baseUri}/reviewd/${id}`;
+    return this.http.delete(url, { headers: this.headers }).pipe(
       catchError(this.errorMgmt)
     );
   }

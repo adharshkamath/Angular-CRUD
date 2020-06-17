@@ -1,7 +1,7 @@
 <div class="container">
-  <h1>Applications submitted for Appraisal</h1>
+  <h1>Reviews completed</h1>
   <hr>
-  <h4 *ngIf="Application.length <= 0" class="no-data text-center">There are no applications to be shown!</h4>
+  <h4 *ngIf="Application.length <= 0" class="no-data text-center">There are no reviews to be shown!</h4>
 
   <table class="table table-bordered" *ngIf="Application.length > 0">
     <thead class="table-success">
@@ -10,9 +10,8 @@
         <th scope="col">Email</th>
         <th scope="col">Department</th>
         <th scope="col">Designation</th>
-        <th scope="col">Current Salary</th>
-        <th scope="col">Appraisal Requested</th>
-        <th scope="col center">Approve/Reject application</th>
+        <th scope="col">Salary</th>
+        <th scope="col center">Edit/Delete review</th>
       </tr>
     </thead>
     <tbody>
@@ -22,13 +21,12 @@
         <td>{{employee.department}}</td>
         <td>{{employee.designation}}</td>
         <td>&#8377; {{employee.salary}}</td>
-        <td>&#8377; {{employee.requestedAppraisal}}</td>
         <td class="text-center edit-block">
-          <span class="edit" (click)="editReview(employee._id, i, employee.requestedAppraisal)">
-            <button type="button" class="btn btn-success btn-sm" style="margin: 5px">Approve</button>
+          <span class="edit" [routerLink]="['/add-review/', employee._id]">
+            <button type="button" class="btn btn-success btn-sm" style="margin: 5px">Edit</button>
           </span>
           <span class="delete" (click)="deleteReview(employee._id, i)">
-            <button type="button" class="btn btn-danger btn-sm" style="margin: 5px">Reject</button>
+            <button type="button" class="btn btn-danger btn-sm" style="margin: 5px">Delete</button>
           </span>
         </td>
       </tr>

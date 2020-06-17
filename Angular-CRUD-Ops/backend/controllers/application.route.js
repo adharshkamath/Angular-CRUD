@@ -4,7 +4,7 @@ const applicationController = express.Router();
 let Employee = require("../models/Employee");
 
 applicationController.route("/applications").get((req, res) => {
-	Employee.find({ appliedForAppraisal: true }, (error, data) => {
+	Employee.find({ review: { $exists: true, $ne: null } }, (error, data) => {
 		if (error) {
 			return next(error);
 		} else {
@@ -18,7 +18,7 @@ applicationController.route("/applications").get((req, res) => {
 applicationController.route("/review/:id").put((req, res) => {
   console.log(req.body.reviewText);
   Employee.findByIdAndUpdate(req.params.id, {
-    $set: { review: req.body.reviewText }
+    $set: { review: req.body.review }
   }, function (err, post) {
     if (err) console.log(err);
     res.json(post);} 

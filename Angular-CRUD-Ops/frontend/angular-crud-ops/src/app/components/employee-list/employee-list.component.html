@@ -12,7 +12,7 @@
         <th scope="col">Designation</th>
         <th scope="col">Phone No</th>
         <th scope="col">Current Salary</th>
-        <th scope="col">Add Application</th>
+        <th scope="col">Review</th>
         <th scope="col center">Update details</th>
       </tr>
     </thead>
@@ -24,7 +24,10 @@
         <td>{{employee.designation}}</td>
         <td>{{employee.phoneNumber}}</td>
         <td>&#8377; {{employee.salary}}</td>
-        <td><span class="edit" [routerLink]="['/add-review/', employee._id]">
+        <td><span class="edit" [routerLink]="['/add-review/', employee._id]" *ngIf="employee.review == undefined">
+            <button type="button" class="btn btn-success btn-sm" style="margin: 4px">Add</button>
+          </span>
+          <span class="edit" [routerLink]="['/add-review/', employee._id]" *ngIf="employee.review != undefined">
             <button type="button" class="btn btn-success btn-sm" style="margin: 4px">Edit</button>
           </span>
           </td>

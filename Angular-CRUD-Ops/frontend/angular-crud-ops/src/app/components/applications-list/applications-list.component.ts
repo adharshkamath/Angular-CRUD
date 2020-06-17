@@ -24,8 +24,8 @@ export class ApplicationsListComponent implements OnInit {
     });
   }
 
-  editReview(id, index, value) {
-    this.apiService.updateReview(id, { raise: value }).subscribe((data) => {
+  editReview(id, index, newText) {
+    this.apiService.updateReview(id, { review: newText }).subscribe((data) => {
       this.Application.splice(index, 1);
     });
   }

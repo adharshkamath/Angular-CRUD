@@ -32,7 +32,7 @@ export class EmployeeCreateComponent implements OnInit {
       designation: ['', [Validators.required]],
       phoneNumber: ['', [Validators.required, Validators.pattern('^[0-9]{10,10}$')]],
       department: ['', [Validators.required]],
-      salary: ['', [Validators.required]],
+      salary: ['', [Validators.required, Validators.pattern('^[0-9]{1,}$')]],
     });
   }
 

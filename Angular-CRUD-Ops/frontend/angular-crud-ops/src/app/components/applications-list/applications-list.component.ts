@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ApiService } from './../../service/api.service';
-import { NgbModal, ModalDismissReasons } from '@ng-bootstrap/ng-bootstrap';
+import { ConfirmationDialogService } from './../../service/confirmation-dialog.service';
 
 @Component({
   selector: 'app-applications-list',
@@ -10,7 +10,7 @@ import { NgbModal, ModalDismissReasons } from '@ng-bootstrap/ng-bootstrap';
 export class ApplicationsListComponent implements OnInit {
   Application: any = [];
 
-  constructor(private apiService: ApiService) {
+  constructor(private apiService: ApiService, private confirmationDialogService: ConfirmationDialogService) {
     this.readReview();
   }
 
@@ -29,6 +29,16 @@ export class ApplicationsListComponent implements OnInit {
     });
   }
 
+  openConfirmationDialog(id, index) {
+    this.confirmationDialogService.confirm('This action cannot be undone.', 'Are you sure you want to continue?')
+    .then((confirmed) => {
+      if (confirmed) {
+        this.apiService.deleteReview(id).subscribe((data) => {
+          this.Application.splice(index, 1);
+        });
+      }}
+    ).catch(() => console.log('User dismissed the dialog (e.g., by using ESC, clicking the cross icon, or clicking outside the dialog)'));
+  }
 
   deleteReview(id, index) {
     if (window.confirm('This action cannot be undone. Are you sure you want to delete it?')) {

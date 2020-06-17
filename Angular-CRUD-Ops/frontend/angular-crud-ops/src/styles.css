@@ -25,6 +25,10 @@ body {
     background-color: #fff;
 }
 
+.mat-drawer-inner-container, .mat-drawer-content {
+    overflow: hidden !important;
+}
+
 hr {
     color: black;
     size: 5px;

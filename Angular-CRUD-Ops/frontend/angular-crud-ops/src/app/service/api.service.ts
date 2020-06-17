@@ -17,7 +17,7 @@ export class ApiService {
 
   createEmployee(data): Observable<any> {
     const url = `${this.baseUri}/create`;
-    data.review = '';
+    data.review = null;
     return this.http.post(url, data)
       .pipe(
         catchError(this.errorMgmt)

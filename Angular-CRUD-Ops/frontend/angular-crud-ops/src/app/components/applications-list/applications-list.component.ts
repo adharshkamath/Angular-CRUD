@@ -32,9 +32,11 @@ export class ApplicationsListComponent implements OnInit {
 
 
   deleteReview(id, index) {
-    this.apiService.deleteReview(id).subscribe((data) => {
-      this.Application.splice(index, 1);
-    });
+    if (window.confirm('This action cannot be undone. Are you sure you want to delete it?')) {
+      this.apiService.deleteReview(id).subscribe((data) => {
+        this.Application.splice(index, 1);
+      });
+    }
   }
 
 }

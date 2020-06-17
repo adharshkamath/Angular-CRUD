@@ -24,9 +24,11 @@ export class EmployeeListComponent implements OnInit {
   }
 
   removeEmployee(employee, index) {
-    this.apiService.deleteEmployee(employee._id).subscribe((data) => {
-      this.Employee.splice(index, 1);
-    });
+    if (window.confirm('This action cannot be undone. Are you sure you want to delete it?')) {
+      this.apiService.deleteEmployee(employee._id).subscribe((data) => {
+        this.Employee.splice(index, 1);
+      });
+    }
   }
 
 }
